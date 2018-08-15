@@ -6,13 +6,14 @@ import VueFire from 'vuefire'
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCircle, faCheckCircle } from '@fortawesome/free-regular-svg-icons'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faCircle, faCheckCircle, faClock } from '@fortawesome/free-regular-svg-icons'
+import { faPlusCircle, faUndo, faTimes, faCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome'
 
-library.add(faCheckCircle, faCircle, faPlusCircle)
+library.add(faCheckCircle, faCircle, faPlusCircle, faClock, faUndo, faTimes, faCheck, faTrash)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('font-awesome-layers', FontAwesomeLayers)
 
 import './registerServiceWorker'
 

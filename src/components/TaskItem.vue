@@ -1,14 +1,15 @@
 <template>
-  <div class="flex mb-3 border text-grey-darker rounded font-sans" :class="{'shadow': !task.checked}">
-    <div @click="markAsCompleted(task)" class="text-grey-darker p-5 text-xl h-full self-center flex-no-shrink">
-      <font-awesome-icon  
+    <div class="flex items-center mb-0 border-b text-grey-darker">
+       <button @click="markAsCompleted(task)"  class="flex-no-shrink text-grey-darkest text-xl p-4 rounded focus:outline-none" type="button">
+        <font-awesome-icon  
         :icon="task.checked ? ['far', 'check-circle'] : ['far', 'circle']" 
-        :class="{'text-teal check-circle': task.checked}"/> 
+        :class="{'text-grey check-circle': task.checked}"/> 
+      </button>
+      <p @click="markAsCompleted(task)" :class="{'text-grey line-through': task.checked}" class="w-full">{{task.title}}</p>
+      <button v-show="task.checked" @click="deleteTask(task.id)" class="flex-no-shrink text-grey text-xl p-4 rounded" type="button">
+        <font-awesome-icon icon="trash"/>
+      </button>
     </div>
-    <div class="py-5 flex" :class="{'text-grey-dark line-through': task.checked}">
-      <span class="self-center">{{ task.title }}</span>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -25,6 +26,10 @@ export default {
       this.tasksRef.doc(task.id).set(task);
       this.task = task;
       console.log(this.task);
+    },
+    deleteTask(id) {
+      console.log(id);
+      this.tasksRef.doc(id).set({});
     }
   }
 }

@@ -1,15 +1,11 @@
 <template>
   <div id="app">
     <navbar/>
-    <div id="nav">
-      <!-- <router-link to="/">Tasks</router-link>
-      <router-link to="/about">About</router-link> -->
-    </div>
-    <div class="container-fluid p-3">
+    <div class="container-fluid p-3 font-sans">
       <router-view/>
-      <div class="bg-orange text-white text-3xl fixed px-5 py-3 pin-r pin-b m-5 rounded-full shadow-lg border-none" >
+      <!-- <div class="bg-orange text-white text-3xl fixed px-5 py-3 pin-r pin-b m-5 rounded-full shadow-lg border-none" >
         +
-      </div>
+      </div> -->
       <!-- <font-awesome-icon icon="plus-circle"/>       -->
     </div>
   </div>
@@ -24,3 +20,10 @@ export default {
   }
 }
 </script>
+
+<style>
+input {
+  outline: 0
+}
+</style>
+
