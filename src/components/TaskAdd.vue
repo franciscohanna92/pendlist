@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
   name: "TaskAdd",
   props: ["tasksRef"],
@@ -32,7 +34,10 @@ export default {
         let newTask = {
           title,
           checked: false,
-          createdAt: new Date()
+          createdAt: new Date(),
+          deleted: false,
+          user_id: firebase.auth().currentUser.uid
+
         }
         console.log(newTask);
         this.tasksRef.doc().set(newTask);

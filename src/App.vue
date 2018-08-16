@@ -1,13 +1,10 @@
 <template>
   <div id="app">
-    <navbar/>
-    <div class="container-fluid p-3 font-sans">
-      <router-view/>
+    <!-- <router-link to="/signup">Registro de usuario</router-link> -->
+      <router-view class="font-sans" />
       <!-- <div class="bg-orange text-white text-3xl fixed px-5 py-3 pin-r pin-b m-5 rounded-full shadow-lg border-none" >
         +
       </div> -->
-      <!-- <font-awesome-icon icon="plus-circle"/>       -->
-    </div>
   </div>
 </template>
 

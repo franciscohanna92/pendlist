@@ -1,17 +1,44 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Tasks from './views/Tasks.vue'
+
+import firebase from 'firebase' 
+
+import Tasks from '@/views/Tasks.vue'
+import Welcome from '@/views/Welcome.vue'
+import SignUp from '@/views/SignUp.vue'
+import Login from '@/views/Login.vue'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'tasks',
-      component: Tasks
+      component: Tasks,
+      meta: {
+        isProtected: true
+      }
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUp
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/welcome',
+      name: 'welcome',
+      component: Welcome,
+      meta: {
+        isProtected: true
+      }
     },
     {
       path: '/about',
@@ -23,3 +50,15 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  let currentUser = firebase.auth().currentUser;
+  let isProtected = to.matched.some(record => record.meta.isProtected)
+
+  if(isProtected && !currentUser) {
+    next('login')
+  }
+  next()
+})
+
+export default router;

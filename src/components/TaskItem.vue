@@ -6,7 +6,7 @@
         :class="{'text-grey check-circle': task.checked}"/> 
       </button>
       <p @click="markAsCompleted(task)" :class="{'text-grey line-through': task.checked}" class="w-full">{{task.title}}</p>
-      <button v-show="task.checked" @click="deleteTask(task.id)" class="flex-no-shrink text-grey text-xl p-4 rounded" type="button">
+      <button v-show="task.checked" @click="deleteTask(task)" class="flex-no-shrink text-grey text-xl p-4 rounded" type="button">
         <font-awesome-icon icon="trash"/>
       </button>
     </div>
@@ -27,9 +27,9 @@ export default {
       this.task = task;
       console.log(this.task);
     },
-    deleteTask(id) {
-      console.log(id);
-      this.tasksRef.doc(id).set({});
+    deleteTask(task) {
+      task.deleted = true;
+      this.tasksRef.doc(task.id).set(task);
     }
   }
 }
