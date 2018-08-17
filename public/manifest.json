@@ -7,7 +7,7 @@
       "sizes": "any"
     }
   ],
-  "start_url": "/",
+  "start_url": "/auth",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#9561e2",
