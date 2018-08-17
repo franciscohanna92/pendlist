@@ -1,9 +1,7 @@
 <template>
-  <div class="h-screen bg-purple p-4 pt-12">
-    <div class="bg-white rounded px-8 pt-6 pb-8 mx-auto shadow-">
-      <h2 class="text-center mb-2">Bievenido a Pendlist</h2>
-      <p class="text-center text-grey-dark mb-6">Inicia sesión y organiza tus cosas!</p>
-      <login-form />
+  <div class="h-screen bg-purple p-5 pt-12">
+    <div class="bg-transparent rounded mx-auto shadow-">
+      <login-form></login-form>
     </div>
   </div>
 </template>

@@ -19,8 +19,5 @@ export default {
 </script>
 
 <style>
-input {
-  outline: 0
-}
 </style>
 

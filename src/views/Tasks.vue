@@ -9,8 +9,6 @@
 import Navbar from '@/components/Navbar.vue';
 import TaskList from '@/components/TaskList.vue';
 
-import firebase from 'firebase';
-
 import db from '../db';
 
 export default {
@@ -18,9 +16,6 @@ export default {
   components: {
     TaskList,
     Navbar
-  },
-  mounted() {
-    console.log(firebase.auth().currentUser);
   },
   data () {
     return {

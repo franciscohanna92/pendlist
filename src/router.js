@@ -6,6 +6,7 @@ import firebase from 'firebase'
 import Tasks from '@/views/Tasks.vue'
 import Welcome from '@/views/Welcome.vue'
 import SignUp from '@/views/SignUp.vue'
+import Auth from '@/views/Auth.vue'
 import Login from '@/views/Login.vue'
 
 Vue.use(Router)
@@ -33,6 +34,11 @@ let router = new Router({
       component: Login
     },
     {
+      path: '/auth',
+      name: 'auth',
+      component: Auth
+    },
+    {
       path: '/welcome',
       name: 'welcome',
       component: Welcome,
@@ -56,7 +62,7 @@ router.beforeEach((to, from, next) => {
   let isProtected = to.matched.some(record => record.meta.isProtected)
 
   if(isProtected && !currentUser) {
-    next('login')
+    next('auth')
   }
   next()
 })
