@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen bg-purple p-5">
+  <div class="flex h-screen bg-purple p-6 pb-8">
     <div class="self-end bg-transparent rounded mx-auto shadow-">
       <div class="px-12 py-8">
         <img src="img/clipboard.svg" class="shadow-lg rounded-full" alt="">

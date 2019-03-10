@@ -1,12 +1,6 @@
 {
   "name": "Pendlist",
   "short_name": "Pendlist",
-  "icons": [
-    {
-      "src": "/img/clipboard.svg",
-      "sizes": "any"
-    }
-  ],
   "start_url": "/auth",
   "display": "standalone",
   "background_color": "#FFFFFF",

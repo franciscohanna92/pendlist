@@ -3,7 +3,7 @@
 	<div>
 		<button class="w-full bg-white py-3 px-4 text-center shadow rounded text-grey-darkest mb-4" @click="googLogin()">Continuar con Google</button>
 		<button class="w-full bg-white py-3 px-4 text-center shadow rounded text-grey-darkest mb-4" @click="facebookLogin()">Continuar con Facebook</button>
-		<router-link to="/login"><button class="w-full bg-transparent text-white border border-white py-3 px-4 text-center shadow rounded text-grey-darkest mb-6">Continuar con email</button></router-link>
+		<router-link to="/login"><button class="w-full bg-transparent text-white border border-white py-3 px-4 text-center shadow rounded text-grey-darkest">Continuar con email</button></router-link>
 	</div>
 </template>
 
